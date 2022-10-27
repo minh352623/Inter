@@ -2,7 +2,7 @@ import React from "react";
 import RenderAvartar from "./RenderAvartar";
 const Card = ({ item }) => {
   return (
-    <div className="col-span-4 max-[800px]:col-span-6 max-[600px]:col-span-12 p-2 bg-slate-800 rounded-lg ">
+    <div className="col-span-4 max-[800px]:col-span-6 max-[600px]:col-span-12 p-2 bg-slate-800 rounded-lg pb-8">
       <div className="image relative">
         <img
           src={item.image}
@@ -32,7 +32,7 @@ const Card = ({ item }) => {
           hello
         </div>
       </div>
-      <div className="content text-slate-50 py-3 border-b border-gray-500">
+      <div className="content text-slate-50 py-3 pb-5 border-b border-gray-500">
         <div className="flex justify-between">
           <span>{item.name}</span>
           <span className="font-semibold text-orange-500">

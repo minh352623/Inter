@@ -17,7 +17,7 @@ const ItemCate = ({ item, index }) => {
           </span>
         </p>
       </div>
-      <div className="py-2 px-4 cursor-pointer hover:bg-purple-700 rounded-lg text-slate-50 bg-purple-500">
+      <div className="py-2 px-4 cursor-pointer hover:bg-purple-700 rounded-lg text-slate-50 bg-gadient">
         Follow
       </div>
     </div>

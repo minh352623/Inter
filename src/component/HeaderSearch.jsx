@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useEffect } from "react";
 
-const HeaderSearch = ({ fn }) => {
+const HeaderSearch = ({ fn, fixed }) => {
   return (
-    <div className="flex items-center ">
+    <div
+      className={`flex items-center z-[10] ${
+        fixed
+          ? "max-[800px]:fixed max-[800px]:top-0 max-[800px]:left-0 max-[800px]:right-0 max-[800px]:py-2 max-[800px]:bg-slate-900"
+          : "max-[800px]:static"
+      } `}
+    >
       <div className="flex xl:flex-none flex-1 w-[75%] items-center  gap-3">
         <div className="xl:hidden text-slate-50 cursor-pointer">
           <svg

@@ -1,6 +1,5 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-
 const SidebarLeft = () => {
   return (
     <div className="xl:w-[6%] w-0 md:visible invisible md:h-screen bg-slate-600 ">
@@ -18,11 +17,11 @@ const SidebarLeft = () => {
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
-            fill="#737909"
+            fill="none"
             viewBox="0 0 24 24"
             strokeWidth="1.5"
             stroke="currentColor"
-            className="w-8 h-8 text-slate-50"
+            className="w-8 h-8 text-slate-50 "
           >
             <path
               strokeLinecap="round"

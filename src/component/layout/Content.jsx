@@ -11,11 +11,27 @@ import TrendChart from "../TrendChart";
 const Content = ({ children }) => {
   const containerMenu = useRef();
   const contentMenu = useRef();
-
+  const content = useRef();
   const [show, setShow] = useState(false);
+  const [fixed, setFixed] = useState(false);
   const hadnleShowMenu = () => {
     setShow(true);
   };
+  useEffect(() => {
+    const fixedHeader = () => {
+      if (content.current.scrollTop > 60) {
+        setFixed(true);
+      } else {
+        setFixed(false);
+      }
+    };
+    content.current.addEventListener("scroll", fixedHeader);
+
+    return () => {
+      // window.removeEventListener("scroll", fixedHeader);
+    };
+  }, []);
+
   useEffect(() => {
     const handleHiddenMenu = (e) => {
       if (!contentMenu.current.contains(e.target)) {
@@ -26,8 +42,11 @@ const Content = ({ children }) => {
   }, []);
   return (
     <>
-      <div className="p-3 bg-slate-700  w-full xl:w-[94%] h-screen overflow-y-auto">
-        <HeaderSearch fn={hadnleShowMenu}></HeaderSearch>
+      <div
+        ref={content}
+        className="p-3 bg-slate-700  w-full xl:w-[94%] h-screen overflow-y-auto"
+      >
+        <HeaderSearch fixed={fixed} fn={hadnleShowMenu}></HeaderSearch>
         <div className="grid grid-cols-12 mt-3">
           <div className="xl:col-span-9 lg:col-span-8  col-span-12">
             {children}
@@ -42,7 +61,7 @@ const Content = ({ children }) => {
         ref={containerMenu}
         className={`${
           show ? "visibble" : "invisible"
-        } transition-all fixed cursor-pointer top-0 bottom-0 right-0 left-0 bg-[rgba(0,0,0,0.5)]`}
+        } transition-all fixed z-20 cursor-pointer top-0 bottom-0 right-0 left-0 bg-[rgba(0,0,0,0.5)]`}
       >
         <div
           ref={contentMenu}
