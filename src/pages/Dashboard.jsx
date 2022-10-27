@@ -8,10 +8,12 @@ import SidebarLeft from "../component/layout/SidebarLeft";
 const Dashboard = () => {
   return (
     <Layout>
-      <div className="bg-gradian h-[300px] rounded-lg relative">
-        <span className="text-xl font-bold text-slate-50  block absolute top-[30px] left-[20px]">
-          Welcome to SoLBuzz
-        </span>
+      <div className="flex items-center justify-center">
+        <div className="bg-gradian lg:h-[300px] h-[150px] lg:w-full w-[200px]  rounded-2xl relative p-5">
+          <span className="text-xl font-bold text-slate-50  block absolute ">
+            Welcome to SoLBuzz
+          </span>
+        </div>
       </div>
       <div className="explore my-5">
         <p className="text-xl text-slate-50 font-semibold">Explore</p>
